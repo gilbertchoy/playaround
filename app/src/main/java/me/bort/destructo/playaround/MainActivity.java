@@ -13,7 +13,7 @@ import java.util.Map;
 import java.util.Stack;
 
 public class MainActivity extends AppCompatActivity {
-    private int arr[]=new int[5];
+    private int arr[];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -99,22 +99,25 @@ public class MainActivity extends AppCompatActivity {
         printValues(result1);
 
         //merge sort
+        arr  = new int[9];
         arr[0]=8;
         arr[1]=5;
         arr[2]=6;
         arr[3]=2;
         arr[4]=3;
-        //mergeSort(0, arr.length);
-        mergeSort(0,4);
+        arr[5]=9;
+        arr[6]=1;
+        arr[7]=10;
+        arr[8]=4;
+        mergeSort(0,arr.length-1);
         Log.d("merge sort","output");
         printValues(arr);
-
-
     }
 
     public void mergeSort(int l, int r){
 
-        Log.d("berttest", "mergesort looping l:" + l + " r:" +r);
+        //Log.d("berttest", "mergesort looping l:" + l + " r:" +r);
+        Log.d("berttest1", "log n breakdown");
 
         int m = (l+r)/2;
 
@@ -123,14 +126,11 @@ public class MainActivity extends AppCompatActivity {
             mergeSort((int) m + 1, r);
             merge(l, m, r);
         }
-        if(l==r){
-            Log.d("berttest", "no more split");
-        }
-
     }
 
     public void merge(int l, int m, int r){
-        Log.d("berttest", "merge looping l:" + l + " m:" + m + " r:" + r);
+        //Log.d("berttest", "merge looping l:" + l + " m:" + m + " r:" + r);
+        Log.d("berttest1", "n times");
         int Lsize = m-l+1;
         int Rsize = r-m;
 
