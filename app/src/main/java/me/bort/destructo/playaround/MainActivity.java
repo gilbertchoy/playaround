@@ -99,37 +99,38 @@ public class MainActivity extends AppCompatActivity {
         printValues(result1);
 
         //merge sort
-
-        arr[0]=4;
+        arr[0]=8;
         arr[1]=5;
         arr[2]=6;
-        arr[3]=1;
-        arr[4]=2;
-        mergeSort(arr, 0, arr.length);
+        arr[3]=2;
+        arr[4]=3;
+        //mergeSort(0, arr.length);
+        mergeSort(0,4);
         Log.d("merge sort","output");
         printValues(arr);
 
 
     }
 
-    public void mergeSort(int a[], int l, int r){
+    public void mergeSort(int l, int r){
 
-        Log.d("berttest", "lopping");
+        Log.d("berttest", "mergesort looping l:" + l + " r:" +r);
 
         int m = (l+r)/2;
 
-        if(m-l > 1){//split left
-            mergeSort(a, l, m);
+        if(l<r) {
+            mergeSort(l, m);
+            mergeSort((int) m + 1, r);
+            merge(l, m, r);
         }
-        if(r-m > 1){//split right
-            mergeSort(a, (int)m+1, r);
+        if(l==r){
+            Log.d("berttest", "no more split");
         }
-
-        merge(a, l, m, r);
 
     }
 
-    public void merge(int a[], int l, int m, int r){
+    public void merge(int l, int m, int r){
+        Log.d("berttest", "merge looping l:" + l + " m:" + m + " r:" + r);
         int Lsize = m-l+1;
         int Rsize = r-m;
 
@@ -138,11 +139,11 @@ public class MainActivity extends AppCompatActivity {
 
         //create left array
         for(int i=0; i<L.length; i++){
-            L[i] = a[l+i];
+            L[i] = arr[l+i];
         }
         //create right array
         for(int i=0; i<R.length; i++){
-            R[i] = a[m+i];
+            R[i] = arr[m+1+i];
         }
 
         int lc = 0;
@@ -151,24 +152,23 @@ public class MainActivity extends AppCompatActivity {
 
         while(lc < L.length && rc < R.length){
             if(L[lc] < R[rc]){
-                a[index] = L[lc];
+                arr[index] = L[lc];
                 lc++;
             }
             else{
-                a[index] = R[rc];
+                arr[index] = R[rc];
                 rc++;
             }
             index++;
-            Log.d("berttest", "lopping1");
         }
 
-        while(lc+1 < L.length){
-            a[index] = L[lc];
+        while(lc < L.length){
+            arr[index] = L[lc];
             lc++;
             index++;
         }
-        while(rc+1 < R.length){
-            a[index] = R[rc];
+        while(rc < R.length){
+            arr[index] = R[rc];
             rc++;
             index++;
         }
