@@ -13,7 +13,8 @@ import java.util.Map;
 import java.util.Stack;
 
 public class MainActivity extends AppCompatActivity {
-    private int arr[];
+    private int arr[]; //used for merge sort
+    private int ar[]; //used for quick sort
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         //hashmap
-        Map<String, Integer> map = new HashMap<String, Integer>();
+        Map<String, Integer> map = new HashMap<>();
         map.put("test",0);
         map.put("test1",1);
         map.put("test2",2);
@@ -58,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         //arraylist
-        ArrayList<String> arrayList = new ArrayList<String>();
+        ArrayList<String> arrayList = new ArrayList<>();
         arrayList.add("fawefwae");
         arrayList.add("fawefwae1");
         arrayList.add("fawefwae2");
@@ -71,14 +72,10 @@ public class MainActivity extends AppCompatActivity {
             Log.d("print arrray list","listerine:" + arrayList.get(i));
         }
 
-
-
-
         HashMap<Character,Integer> substring = new HashMap<Character, Integer>();
         substring.clear();
 
         List<String> countries = Arrays.asList("Germany", "Panama", "Australia", "US");
-
 
         //unsorted array
         int a[]=new int[5];
@@ -88,12 +85,12 @@ public class MainActivity extends AppCompatActivity {
         a[3]=1;
         a[4]=2;
 
-        //bubble sort
+        //bubble sort - go through array n times, compare values adjacent values, if left not smaller than right, then swap
         int[] result = bubbleSort(a);
         Log.d("bubble sort","output");
         printValues(result);
 
-        //selection sort
+        //selection sort - find smallest value and swap with first element, find second smallest value swap with 2nd element, etc
         int[] result1 = selectionSort(a);
         Log.d("selection sort","output");
         printValues(result1);
@@ -112,6 +109,51 @@ public class MainActivity extends AppCompatActivity {
         mergeSort(0,arr.length-1);
         Log.d("merge sort","output");
         printValues(arr);
+
+        //quick sort
+        ar = new int[8];
+        ar[0]=6;
+        ar[1]=1;
+        ar[2]=2;
+        ar[3]=5;
+        ar[4]=8;
+        ar[5]=9;
+        ar[6]=7;
+        ar[7]=10;
+        quickSort(0,ar.length-1);
+        //partition(0,ar.length-1);
+        Log.d("quick sort", "output");
+        printValues(ar);
+    }
+
+    public void quickSort(int low, int high){
+        if(low<high){
+            int mid = partition(low, high);
+            quickSort(low, mid-1);
+            quickSort(mid+1,high);
+        }
+    }
+
+    public int partition(int low, int high){
+        Log.d("partition", "low:"+low+" high:"+high);
+        int pivot = ar[high];
+
+        int i = low; //current index of smaller array
+        for(int j=i; j<high; j++){
+            if(ar[j] <= pivot){
+                //swap
+                int temp = ar[i];
+                ar[i] = ar[j];
+                ar[j] = temp;
+                i++;
+            }
+        }
+        //swap 1st element with pivot position
+        int temp = ar[high];
+        ar[high] = ar[i];
+        ar[i] = temp;
+        Log.d("partition", "mid:"+i);
+        return i;
     }
 
     public void mergeSort(int l, int r){
@@ -123,7 +165,7 @@ public class MainActivity extends AppCompatActivity {
 
         if(l<r) {
             mergeSort(l, m);
-            mergeSort((int) m + 1, r);
+            mergeSort( m + 1, r);
             merge(l, m, r);
         }
     }
@@ -180,7 +222,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public int[] selectionSort(int a[]){ // find smallest value and swap with first element, find second smallest value swap with 2nd element, etc
+    public int[] selectionSort(int a[]){
         Integer smallestIndex = null; //using Integer instead of int so I can set value to null
         for(int i=0; i<a.length; i++){
             smallestIndex = null;
