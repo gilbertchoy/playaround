@@ -95,7 +95,9 @@ public class MainActivity extends AppCompatActivity {
         Log.d("selection sort","output");
         printValues(result1);
 
-        //merge sort
+        /*merge sort - keep dividing array into halves by dividing by 2 until all arrays have 2 element.  Merge smallest
+        arrays together based on value, then keep merging larger arrays together until have fully sorted array.
+        Big O = nlogn*/
         arr  = new int[9];
         arr[0]=8;
         arr[1]=5;
@@ -110,7 +112,8 @@ public class MainActivity extends AppCompatActivity {
         Log.d("merge sort","output");
         printValues(arr);
 
-        //quick sort
+        /*quick sort - make right most element as pivot, put all values smaller than pivot to left,
+        put all values larger than value to right.  Repeat left and right halves until sorted. Big O = n^2*/
         ar = new int[8];
         ar[0]=6;
         ar[1]=1;
@@ -121,7 +124,6 @@ public class MainActivity extends AppCompatActivity {
         ar[6]=7;
         ar[7]=10;
         quickSort(0,ar.length-1);
-        //partition(0,ar.length-1);
         Log.d("quick sort", "output");
         printValues(ar);
     }
@@ -134,8 +136,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public int partition(int low, int high){
-        Log.d("partition", "low:"+low+" high:"+high);
+    public int partition(int low, int high){  //part of quick sort
         int pivot = ar[high];
 
         int i = low; //current index of smaller array
@@ -152,15 +153,10 @@ public class MainActivity extends AppCompatActivity {
         int temp = ar[high];
         ar[high] = ar[i];
         ar[i] = temp;
-        Log.d("partition", "mid:"+i);
         return i;
     }
 
     public void mergeSort(int l, int r){
-
-        //Log.d("berttest", "mergesort looping l:" + l + " r:" +r);
-        Log.d("berttest1", "log n breakdown");
-
         int m = (l+r)/2;
 
         if(l<r) {
@@ -170,9 +166,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void merge(int l, int m, int r){
-        //Log.d("berttest", "merge looping l:" + l + " m:" + m + " r:" + r);
-        Log.d("berttest1", "n times");
+    public void merge(int l, int m, int r){  //part of merge sort
         int Lsize = m-l+1;
         int Rsize = r-m;
 
