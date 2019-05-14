@@ -15,6 +15,7 @@ import java.util.Stack;
 public class MainActivity extends AppCompatActivity {
     private int arr[]; //used for merge sort
     private int ar[]; //used for quick sort
+    private int ar1[]; //used for heap sort
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -126,6 +127,63 @@ public class MainActivity extends AppCompatActivity {
         quickSort(0,ar.length-1);
         Log.d("quick sort", "output");
         printValues(ar);
+
+        /*heap sort - create heap data structure, cycle through number of elements and take out root node
+        while heapifying the rest of the elements */
+        ar1 = new int[8];
+        ar1[0]=6;
+        ar1[1]=11;
+        ar1[2]=2;
+        ar1[3]=5;
+        ar1[4]=8;
+        ar1[5]=9;
+        ar1[6]=7;
+        ar1[7]=10;
+        heapSort();
+        Log.d("heap sort", "output");
+        printValues(ar1);
+    }
+
+    public void heapSort(){
+        int n = ar1.length;
+
+        for (int i = n / 2 - 1; i >= 0; i--) {
+            heapify(n, i);
+        }
+
+        for (int i=n-1; i>=0; i--)
+        {
+            // Move current root to end
+            int temp = ar1[0];
+            ar1[0] = ar1[i];
+            ar1[i] = temp;
+
+            // call max heapify on the reduced heap
+            heapify( i,0);
+        }
+    }
+
+    public void heapify(int n, int i){
+        int largest = i;
+        int l = 2*i+1;
+        int r = 2*i+2;
+
+        if(l<n && ar1[l]>ar1[largest]){
+            largest = l;
+        }
+
+        if(r<n && ar1[r]>ar1[largest]){
+            largest = r;
+        }
+
+        if(largest != i){
+            int swap = ar1[i];
+            ar1[i] = ar1[largest];
+            ar1[largest] = swap;
+
+            heapify(n,largest);
+        }
+
     }
 
     public void quickSort(int low, int high){
@@ -250,5 +308,5 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    
+
 }
