@@ -22,7 +22,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         //hashmap
         Map<String, Integer> map = new HashMap<>();
         map.put("test",0);
@@ -96,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
         Log.d("selection sort","output");
         printValues(result1);
 
-        /*merge sort - keep dividing array into halves by dividing by 2 until all arrays have 2 element.  Merge smallest
+        /*merge sort - keep dividing array into halves by dividing by 2 until all arrays have 1 element.  Merge smallest
         arrays together based on value, then keep merging larger arrays together until have fully sorted array.
         Big O = nlogn*/
         arr  = new int[9];
@@ -275,9 +274,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public int[] selectionSort(int a[]){
-        Integer smallestIndex = null; //using Integer instead of int so I can set value to null
         for(int i=0; i<a.length; i++){
-            smallestIndex = null;
+            Integer smallestIndex = null; //using Integer instead of int so I can set value to null
             for(int j=i; j<a.length; j++){
                 if(smallestIndex == null){
                     smallestIndex = j;
@@ -306,7 +304,5 @@ public class MainActivity extends AppCompatActivity {
         }
         return a;
     }
-
-
 
 }
