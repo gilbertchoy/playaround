@@ -22,23 +22,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
         //hashmap
         Map<String, Integer> map = new HashMap<>();
         map.put("test",0);
@@ -158,6 +141,18 @@ public class MainActivity extends AppCompatActivity {
         heapSort();
         Log.d("heap sort", "output");
         printValues(ar1);
+
+        /* binary search - in sorted array search of specific value by starting in the middle and keep searching
+        lower or upper halves til value is found*/
+        int[] ar2 = new int[5];
+        ar2[0]=1;
+        ar2[1]=2;
+        ar2[2]=3;
+        ar2[3]=4;
+        ar2[4]=5;
+        int result2 = binarySearch(ar2, 0, ar2.length, 3);
+        Log.d("binary search result:", " index of target element - " + result2);
+
     }
 
     public void heapSort(){
@@ -320,6 +315,25 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         return a;
+    }
+
+    public int binarySearch(int a[], int l, int r, int target){
+        if(r >= l){
+            int mid = l + (r-l)/2;
+
+            if(a[mid] == target){  //if target is found then return found element
+                return mid;
+            }
+
+            if(a[mid] < target){  //if target is greater than mid the search upper half
+                return binarySearch(a,mid+1, r, target);
+            }
+            else{  //if target is less than mid the search lower half
+                return binarySearch(a,l,mid-1, target);
+            }
+        }
+        //if int not in array then return -1
+        return -1;
     }
 
 }
