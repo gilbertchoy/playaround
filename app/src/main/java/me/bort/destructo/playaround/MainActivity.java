@@ -22,6 +22,25 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Car car = new Car();
+        car.numDoors = 4;
+
+        Car car1 = new Car();
+        car1.numDoors = 5;
+
+        Car.numDoors = 6;
+
+        Log.d("berttest", "num doors:" + car.numDoors);
+
+        Log.d("berrtest", "getSpeed:" + Car.getSpeed());
+        Log.d("berrtest", "getSpeed:" + car.getSpeed());
+
+
+
+
+
+
+
         //hashmap
         Map<String, Integer> map = new HashMap<>();
         map.put("test",0);
