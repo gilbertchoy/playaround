@@ -36,11 +36,6 @@ public class MainActivity extends AppCompatActivity {
         Log.d("berrtest", "getSpeed:" + car.getSpeed());
 
 
-
-
-
-
-
         //hashmap
         Map<String, Integer> map = new HashMap<>();
         map.put("test",0);
@@ -61,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         //array
-        int[] array = new int[20];
+        int[] array = new int[20]; 
 
         int x = 0;
         for(int i =0; i<array.length; i++){
