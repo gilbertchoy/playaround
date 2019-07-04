@@ -22,6 +22,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+        String st = "asdf";
+
+        st.length();
+
+
+
         Car car = new Car();
         car.numDoors = 4;
 
@@ -44,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
         map.put("test3",3);
         map.put("test4",4);
 
+
         Log.d("test", "contains key " + map.containsKey("test"));
 
         map.put("test5", 1);
@@ -55,8 +63,9 @@ public class MainActivity extends AppCompatActivity {
             entry.getKey();
         }
 
+
         //array
-        int[] array = new int[20]; 
+        int[] array = new int[20];
 
         int x = 0;
         for(int i =0; i<array.length; i++){
