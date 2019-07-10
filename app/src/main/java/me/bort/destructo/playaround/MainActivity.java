@@ -7,9 +7,11 @@ import android.util.Log;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.Stack;
 
 public class MainActivity extends AppCompatActivity {
@@ -27,6 +29,11 @@ public class MainActivity extends AppCompatActivity {
 
         st.length();
 
+
+
+        Set<String> test= new HashSet<String>();
+        test.contains("asdf");
+        Iterator it = test.iterator();
 
 
         Car car = new Car();
@@ -51,7 +58,6 @@ public class MainActivity extends AppCompatActivity {
         map.put("test3",3);
         map.put("test4",4);
 
-
         Log.d("test", "contains key " + map.containsKey("test"));
 
         map.put("test5", 1);
@@ -61,8 +67,10 @@ public class MainActivity extends AppCompatActivity {
         for(Map.Entry<String, Integer> entry: map.entrySet()){
             entry.getValue();
             entry.getKey();
+            entry.setValue(9);
         }
 
+        Log.d("mytest1","mytest1 " + map.get("test"));
 
         //array
         int[] array = new int[20];
