@@ -25,15 +25,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
+
         String st = "asdf";
-
         st.length();
-
-
 
         Set<String> test= new HashSet<String>();
         test.contains("asdf");
         Iterator it = test.iterator();
+
+
 
 
         Car car = new Car();
@@ -44,8 +44,11 @@ public class MainActivity extends AppCompatActivity {
 
         Car.numDoors = 6;
 
-        Log.d("berttest", "num doors:" + car.numDoors);
 
+
+
+        Log.d("berttest", "num doors:" + car.numDoors);
+        Log.d("berttest", "num doors:" + Car.numDoors);
         Log.d("berrtest", "getSpeed:" + Car.getSpeed());
         Log.d("berrtest", "getSpeed:" + car.getSpeed());
 
