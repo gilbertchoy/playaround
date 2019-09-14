@@ -44,13 +44,19 @@ public class MainActivity extends AppCompatActivity {
 
         Car.numDoors = 6;
 
-
-
-
         Log.d("berttest", "num doors:" + car.numDoors);
         Log.d("berttest", "num doors:" + Car.numDoors);
         Log.d("berrtest", "getSpeed:" + Car.getSpeed());
         Log.d("berrtest", "getSpeed:" + car.getSpeed());
+
+        car.numHeadlights = 33;
+        car1.numHeadlights = 66;
+        Log.d("berrtest", "car numHeadlights:" + car.numHeadlights);
+        Log.d("berrtest", "car1 numHeadlights:" + car1.numHeadlights);
+
+
+
+
 
 
         //hashmap
