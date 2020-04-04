@@ -6,6 +6,7 @@ import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -24,17 +25,22 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-
         String st = "asdf";
         st.length();
 
         Set<String> test= new HashSet<String>();
-        test.contains("asdf");
+        test.add("one");
+        test.add("two");
+        test.add("three");
+        Log.d("berttest", "test HashSet contain: " + test.contains("three"));
         Iterator it = test.iterator();
+        while(it.hasNext()){
+            Log.d("berttest", "HashSet next:" + it.next());
+        }
 
-
-
+        String testString = "foo";
+        testString = testString + " bar";
+        Log.d("berttest", "testString: " + testString);
 
         Car car = new Car();
         car.numDoors = 4;
@@ -53,10 +59,6 @@ public class MainActivity extends AppCompatActivity {
         car1.numHeadlights = 66;
         Log.d("berrtest", "car numHeadlights:" + car.numHeadlights);
         Log.d("berrtest", "car1 numHeadlights:" + car1.numHeadlights);
-
-
-
-
 
 
         //hashmap
@@ -107,6 +109,7 @@ public class MainActivity extends AppCompatActivity {
         arrayList.add("fawefwae4");
         arrayList.add("fawefwae5");
 
+        //cycle through arraylist
         for(int i=0; i<arrayList.size(); i++){
             arrayList.get(i);
             Log.d("print arrray list","listerine:" + arrayList.get(i));
