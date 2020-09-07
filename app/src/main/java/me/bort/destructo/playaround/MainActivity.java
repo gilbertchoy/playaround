@@ -18,7 +18,7 @@ import java.util.Stack;
 public class MainActivity extends AppCompatActivity {
     private int arr[]; //used for merge sort
     private int ar[]; //used for quick sort
-    private int ar1[]; //used for heap sort
+    private int ar1[]; //used for heap sort 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
