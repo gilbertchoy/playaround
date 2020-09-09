@@ -118,7 +118,7 @@ public class MainActivity extends AppCompatActivity {
         HashMap<Character,Integer> substring = new HashMap<Character, Integer>();
         substring.clear();
 
-        List<String> countries = Arrays.asList("Germany", "Panama", "Australia", "US");
+        List<String> countries = Arrays.asList("Germany", "Panama", "Australia", "US", "Mexico", "Canada");
 
         //unsorted array
         int a[]=new int[5];
