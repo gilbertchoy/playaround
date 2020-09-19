@@ -25,6 +25,37 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //rando exercises
+            //shift arraylist to right 2
+        List<Integer> aria = new ArrayList<Integer>();
+        aria.add(1);
+        aria.add(2);
+        aria.add(3);
+        aria.add(4);
+        aria.add(5);
+
+        Log.d("berttest", " arraylist test " + aria.get(2));
+
+        int shift = 2;
+        int n = aria.size();
+        List<Integer> resultt = new ArrayList<Integer>();
+        for(int i = 0; i<aria.size(); i++){
+            int index;
+            if(i+shift > (n-1)){
+                index = i+shift - n;
+            }else{
+                index = i + shift;
+            }
+            resultt.add(aria.get(index));
+        }
+        for(int i = 0; i<resultt.size(); i++){
+            Log.d("berttest", "result: " + resultt.get(i));
+        }
+
+        //End rando
+
+        
+
         String st = "asdf";
         st.length();
 
