@@ -26,6 +26,42 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //rando exercises
+
+
+        int r = 6;
+        int c = 3;
+
+        int result = 0;
+
+        if(r==1){
+            result = ((c-1)*(2));
+        }else if(r==2){
+            result = 1 + ((c-1)*(2));
+        }
+        else{
+            //even
+            if(r%2 == 0){
+                result = (r-2) * 5 + 1 + ((c-1)*(2));
+            }
+            //odd
+            else{
+                result = ((r-1) * 5) + ((c-1)*(2));
+            }
+        }
+
+
+
+
+        int x1;
+        x1 = Integer.parseInt(null);
+
+
+
+        String stringtest = "wewe";
+        if(stringtest == "wewe"){
+            Log.d("berttest","string matches");
+        }
+
             //shift arraylist to right 2
         List<Integer> aria = new ArrayList<Integer>();
         aria.add(1);
@@ -54,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
 
         //End rando
 
-        
+
 
         String st = "asdf";
         st.length();
