@@ -28,6 +28,36 @@ public class MainActivity extends AppCompatActivity {
         //rando exercises
 
 
+        int small_side;
+        int large_side;
+        int result=0;
+        int square_side=0;
+
+        if(l<b){
+            small_side = l;
+            large_side = b;
+        }else{
+            small_side = b;
+            large_side = l;
+        }
+
+        for(int i = small_side; i > 0; i--){
+            if(small_side % i == 0){
+                if(large_side % i == 0){
+                    square_side = i;
+                    break;
+                }
+            }
+        }
+        result = (l/square_side) * (b/square_side);
+        return result;
+
+
+
+        
+
+
+
         int r = 6;
         int c = 3;
 
