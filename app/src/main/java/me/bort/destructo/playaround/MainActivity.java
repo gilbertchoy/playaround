@@ -25,103 +25,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //rando exercises
-
-
-        int small_side;
-        int large_side;
-        int result=0;
-        int square_side=0;
-
-        if(l<b){
-            small_side = l;
-            large_side = b;
-        }else{
-            small_side = b;
-            large_side = l;
-        }
-
-        for(int i = small_side; i > 0; i--){
-            if(small_side % i == 0){
-                if(large_side % i == 0){
-                    square_side = i;
-                    break;
-                }
-            }
-        }
-        result = (l/square_side) * (b/square_side);
-        return result;
-
-
-
-        
-
-
-
-        int r = 6;
-        int c = 3;
-
-        int result = 0;
-
-        if(r==1){
-            result = ((c-1)*(2));
-        }else if(r==2){
-            result = 1 + ((c-1)*(2));
-        }
-        else{
-            //even
-            if(r%2 == 0){
-                result = (r-2) * 5 + 1 + ((c-1)*(2));
-            }
-            //odd
-            else{
-                result = ((r-1) * 5) + ((c-1)*(2));
-            }
-        }
-
-
-
-
-        int x1;
-        x1 = Integer.parseInt(null);
-
-
-
-        String stringtest = "wewe";
-        if(stringtest == "wewe"){
-            Log.d("berttest","string matches");
-        }
-
-            //shift arraylist to right 2
-        List<Integer> aria = new ArrayList<Integer>();
-        aria.add(1);
-        aria.add(2);
-        aria.add(3);
-        aria.add(4);
-        aria.add(5);
-
-        Log.d("berttest", " arraylist test " + aria.get(2));
-
-        int shift = 2;
-        int n = aria.size();
-        List<Integer> resultt = new ArrayList<Integer>();
-        for(int i = 0; i<aria.size(); i++){
-            int index;
-            if(i+shift > (n-1)){
-                index = i+shift - n;
-            }else{
-                index = i + shift;
-            }
-            resultt.add(aria.get(index));
-        }
-        for(int i = 0; i<resultt.size(); i++){
-            Log.d("berttest", "result: " + resultt.get(i));
-        }
-
-        //End rando
-
-
-
         String st = "asdf";
         st.length();
 
@@ -149,13 +52,13 @@ public class MainActivity extends AppCompatActivity {
 
         Log.d("berttest", "num doors:" + car.numDoors);
         Log.d("berttest", "num doors:" + Car.numDoors);
-        Log.d("berrtest", "getSpeed:" + Car.getSpeed());
-        Log.d("berrtest", "getSpeed:" + car.getSpeed());
+        Log.d("berttest", "getSpeed:" + Car.getSpeed());
+        Log.d("berttest", "getSpeed:" + car.getSpeed());
 
         car.numHeadlights = 33;
         car1.numHeadlights = 66;
-        Log.d("berrtest", "car numHeadlights:" + car.numHeadlights);
-        Log.d("berrtest", "car1 numHeadlights:" + car1.numHeadlights);
+        Log.d("berttest", "car numHeadlights:" + car.numHeadlights);
+        Log.d("berttest", "car1 numHeadlights:" + car1.numHeadlights);
 
 
         //hashmap
@@ -298,6 +201,8 @@ public class MainActivity extends AppCompatActivity {
     public void heapSort(){
         int n = ar1.length;
 
+        //create heap binary tree - start heapifying at 1st non leaf node
+        // and decrease by one until entire thing is heapified
         for (int i = n / 2 - 1; i >= 0; i--) {
             heapify(n, i);
         }
