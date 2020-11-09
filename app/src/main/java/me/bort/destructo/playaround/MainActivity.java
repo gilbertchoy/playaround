@@ -263,7 +263,7 @@ public class MainActivity extends AppCompatActivity {
                 i++;
             }
         }
-        //swap 1st element with pivot position
+        //swap pivot to position at i+1 to put pivot in place
         int temp = ar[high];
         ar[high] = ar[i];
         ar[i] = temp;
