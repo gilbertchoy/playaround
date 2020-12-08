@@ -25,18 +25,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        int[] b = new int[2];
-
-
-        int[][] ar2d = new int[3][3];
-        Log.d("berttest", "value in array is " + ar2d[1][2]);
-        Log.d("berttest", ar2d[1][2]
-        if(ar2d[1][2].))
-
-        if(ar2d[1][2] == 0){
-            Log.d("berttest", "1value in array is " + ar2d[1][2]);
-        }
-
         String st = "asdf";
         st.length();
 
