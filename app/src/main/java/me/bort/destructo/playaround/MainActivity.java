@@ -74,6 +74,8 @@ public class MainActivity extends AppCompatActivity {
         map.put("test5", 1);
         Log.d("test", "test5 value: " + map.get("test5"));
 
+        map.remove("test3");
+
         //cycle through hashmap
         for(Map.Entry<String, Integer> entry: map.entrySet()){
             entry.getValue();
