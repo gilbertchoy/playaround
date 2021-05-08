@@ -28,14 +28,13 @@ public class MainActivity extends AppCompatActivity {
         String st = "asdf";
         st.length();
 
-        Set<String> test= new HashSet<String>();
-        test.add("one");
-        test.add("two");
-        test.add("three");
-        Log.d("berttest", "test HashSet contain: " + test.contains("three"));
-        Iterator it = test.iterator();
-        while(it.hasNext()){
-            Log.d("berttest", "HashSet next:" + it.next());
+        String string = "felfjelgjeoireog";
+        Set<Character> set = new HashSet<Character>();
+        for(int i=0; i<string.length(); i++){
+            set.add(string.charAt(i));
+        }
+        for(char temp : set){
+            Log.d("berttest","current char:" + temp);
         }
 
         String testString = "foo";
@@ -75,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
         Log.d("test", "test5 value: " + map.get("test5"));
 
         map.remove("test3");
+        map.containsKey("test2");
 
         //cycle through hashmap
         for(Map.Entry<String, Integer> entry: map.entrySet()){
